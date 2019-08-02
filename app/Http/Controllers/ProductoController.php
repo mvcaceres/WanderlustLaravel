@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -30,7 +31,10 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all();
+        return view('agregarproducto', compact('categorias'));
+
+        //te deveuvle la vista con el formulario para crear el producto
     }
 
     /**

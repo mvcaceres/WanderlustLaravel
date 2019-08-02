@@ -22,3 +22,9 @@ Route::get('/productos', 'ProductoController@index');
 Route::get('/producto/{id}', 'ProductoController@show');
 
 Route::get('/categoria/{id?}', 'ProductoController@index');
+
+
+Route::get('/agregarproducto', 'ProductoController@create')->middleware('admin');
+Route::post('/agregarproducto', 'ProductoController@store');
+Route::get('/editarproducto/{id}', 'ProductoController@edit');
+Route::post('/editarproducto/{id}', 'ProductoController@update');

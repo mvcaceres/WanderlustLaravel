@@ -18,8 +18,8 @@
     <header>
 <!-- barra superior mobile y tablet -->
       <div class="barraSuperior">
-        <div class="barraSuperior-izquierda">
             <!-- Redes Sociales -->
+        <div class="barraSuperior-izquierda">
             <div class="RRSS">
             <nav class="redesSociales">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -35,8 +35,36 @@
             <!-- inicio/registro -->
             <div class="inicio-registro">
               <nav class="inicioRegistro">
-                <a href="{{ route('login') }}" class="botones">Iniciar sesión</a>
-                <a href="{{ route('register') }}" class="registro">Registrarme</a>
+
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
               </nav>
             </div>
             <!-- fin inicio/registro -->
@@ -72,8 +100,35 @@
                 <a href="/productos" class="botones">PRODUCTOS</a>
                 <a href="faqs.html" class="botones">PREGUNTAS FRECUENTES</a>
                 <!-- solo desktop: -->
-                <a href="{{ route('login') }}" class="botonesD">Iniciar sesión</a>
-                <a href="{{ route('register') }}" class="botonesD">Registrarme</a>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
                 <!-- carrito desktop: -->
                 <div class="carritoD">
                     <i class="fas fa-shopping-cart"></i>
