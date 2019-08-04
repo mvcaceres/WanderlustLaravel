@@ -20,7 +20,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre',50);
             $table->string('descripcion',255);
             $table->decimal('precio',8,2);
-            $table->string('imagen', 150);
+            $table->string('imagen', 150)->nullable();
             $table->integer('stock')->unsigned();
             $table->string('tamano',5);
             $table->string('color',20);

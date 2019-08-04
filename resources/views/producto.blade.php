@@ -17,6 +17,22 @@
           <p></p>
           <button type="submit">Agregar al carrito</button>
         </form>
+
+        <form class="" action="/editarproducto/{{$producto->id}}" method="get">
+
+            {{-- <input type="hidden" name="id" value="{{$producto->id}}"> --}}
+          <input type="submit" name="" value="Editar Producto">
+          @csrf
+
+        </form>
+
+        <form class="" action="/borrarproducto/{{$producto->id}}" method="get">
+
+            {{-- <input type="hidden" name="id" value="{{$producto->id}}"> --}}
+          <input type="submit" name="" value="Borrar Producto">
+          @csrf
+
+        </form>
         <img src="/storage/producto/{{$producto->imagen}}" alt="">
 
       </article>

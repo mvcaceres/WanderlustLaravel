@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name',50);
             $table->string('apellido',50);
             $table->string('telefono',20);
-            $table->string('direccion',50);
+            $table->string('direccion',100);
             $table->string('ciudad',50);
             $table->string('provincia',50);
             $table->string('codigoPostal',10);

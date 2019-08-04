@@ -37,6 +37,11 @@ class DatabaseSeeder extends Seeder
 
         factory(\App\Producto::class, 40)->create();
         factory(\App\User::class, 7)->create();
+        // $maletas =
+        // factory(\App\Producto::class, 40)->create([
+        //   'categoria_id' => 1,
+        //   'imagen'
+        // ]);
 
     }
 }
