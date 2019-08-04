@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <script type="text/javascript" src="js/api.js">
+
+    </script>
   </head>
 
   <body>
@@ -43,11 +46,11 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    
+
                     @if (Route::has('register'))
-                        
+
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        
+
                     @endif
                     </li>
                 @else
@@ -59,7 +62,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                        
+
                     </li>
                 @endguest
 
@@ -101,11 +104,11 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    
+
                     @if (Route::has('register'))
-                        
+
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        
+
                     @endif
                     </li>
                 @else
@@ -128,7 +131,8 @@
 
                 <!-- carrito desktop: -->
                 <div class="carritoD">
-                    <i class="fas fa-shopping-cart"></i>
+                <a href="/carrito"><i class="fas fa-shopping-cart">
+                </i></a>
                   </div>
                 <!-- fin Carrito desktop -->
             </nav>

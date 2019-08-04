@@ -63,7 +63,7 @@ class ProductoController extends Controller
 
           //Crear un nuevo objeto Producto
           $nuevoProducto = new Producto();
-          $path = $request->file('imagen')->store('app/public/producto');
+          $path = $request->file('imagen')->store('/public/producto');
           $file = basename($path);
 
 

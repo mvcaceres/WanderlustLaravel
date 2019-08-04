@@ -9,9 +9,9 @@
         <p>Descripción: {{$producto->descripcion}}</p>
         <p>Precio: {{$producto->precio}}</p>
         {{-- <p><a href="#">Comprar</a></p> --}}
-        <form class="" action="/addtocart" method="post">
+        <form class="" action="/agregaralcarrito" method="post">
           @csrf
-          <input type="number" name="quantity" value="" placeholder="Cantidad">
+          <input type="number" name="cantidad" value="" placeholder="Cantidad">
           {{$errors->first('cantidad')}}
           <input type="hidden" name="id" value="{{$producto->id}}">
           <p></p>
