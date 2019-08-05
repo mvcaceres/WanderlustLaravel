@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Validator;
+use Auth;
 
 class UserController extends Controller
 {
@@ -15,19 +16,19 @@ class UserController extends Controller
       return view('usuarios', compact('usuarios'));
     }
 
-    public function show($id)
+    public function show()
     {
-      $usuario = User::find($id);
+      $usuario = Auth::user();
       return view('miperfil', compact('usuario'));
     }
 
-    public function edit($id)
+    public function edit()
     {
-      $usuario = User::find($id);
+      $usuario = Auth::user();
       return view('editarmiperfil', compact('usuario'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
       $reglas = [
         "name" => "required|string|min:2",
@@ -49,9 +50,9 @@ class UserController extends Controller
         return view('editarmiperfil')->withErrors($validator);
         } else {
 
-          $usuario = User::find($id);
+          $usuario = Auth::user();
 
-          $path = $request->file('foto')->store('userFoto');
+          $path = $request->file('foto')->store('/public/userFoto');
           $file = basename($path);
 
           $usuario->name = $request["name"];
@@ -65,7 +66,7 @@ class UserController extends Controller
           $usuario->foto = $file;
           $usuario->save();
 
-          return redirect('/home');
+          return redirect('/miperfil');
 
       }
 

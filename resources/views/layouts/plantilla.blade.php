@@ -57,8 +57,8 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button">
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/miperfil">
+                    Hola, {{Auth::user()->name }} <span class="caret"></span>
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -92,9 +92,9 @@
         <!-- fin menu hamburguesa para mobile -->
 
         <!-- logo principal -->
-
+    
         <img id= "logoPrincipal" src= "{{ asset('img/logoWanderlust.png') }}" alt="logoW">
-
+    
         <!-- fin logo principal -->
 
         <!-- Opciones para tablet y desktop -->
@@ -115,8 +115,8 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/miperfil">
+                        Hola, {{Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

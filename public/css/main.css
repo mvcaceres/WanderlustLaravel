@@ -25,6 +25,9 @@ header{
   justify-content: space-between;
 }
 
+a{
+  text-decoration:none !important;
+}
 /* barra superior */
 .barraSuperior{
   height: 50px;
@@ -64,7 +67,6 @@ li.nav-item{
 .inicioRegistro a{
 }
 .nav-item a{
-  text-decoration: none;
   color: white;
   margin-left: 5px;
   font-size: 10px;
@@ -73,8 +75,6 @@ li.nav-item{
       background-color: #189D98;
   text-align: center;
 }
-
-
 
 .inicioRegistro .botones{
   background-color: #189D98;
@@ -166,12 +166,10 @@ display: none;
     border: 2px solid #1C6A89;
     text-align: center;
     background-color: #1C6A89;
-    text-decoration: none;
   }
 
   .opciones .botonesD{
     display: none;
-    text-decoration: none;
   }
 
   .navPrincipal{
@@ -242,11 +240,7 @@ display: none;
     font-size: 25px;
     padding: 5px;
     color: white;
-  }
 
-  .carritoD a{
-    text-decoration: none;
-    color: white;
   }
 
   .navPrincipal{
@@ -759,8 +753,6 @@ footer.site-footer .footer-information{
 footer .contenedor{
   padding-bottom: 20px;
 }
-
-
 
 footer .contenedor > div{
   color: #ffffff!important;

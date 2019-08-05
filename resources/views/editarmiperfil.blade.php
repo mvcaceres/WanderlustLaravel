@@ -14,7 +14,7 @@
                       <div class="card-header">{{ __('Editar Mi Perfil') }}</div>
 
                       <div class="card-body">
-                          <form method="POST" action="/actualizarmiperfil/{{$usuario->id}}" enctype="multipart/form-data">
+                          <form method="POST" action="/actualizarmiperfil" enctype="multipart/form-data">
                               @csrf
 
                               <!-- nombre -->

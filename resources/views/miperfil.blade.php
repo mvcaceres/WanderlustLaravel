@@ -2,7 +2,7 @@
 
 @section('sectionContenido')
 
-<h1>Detalle de Mi Perfil</h1>
+<h1>Mi Perfil</h1>
     <section>
       <article>
         <img src="/storage/userFoto/{{$usuario->foto}}" alt="imagenDelUsuario">
@@ -16,7 +16,22 @@
         <p>Código Postal: {{$usuario->codigoPostal}}</p>
         <p>Email: {{$usuario->email}}</p>
 
+        <form class="" action="/editarmiperfil" method="get">
 
+            {{-- <input type="hidden" name="id" value="{{$usuario->id}}"> --}}
+          <input type="submit" name="" value="Editar Mis Datos">
+          @csrf
+
+        </form>
+
+        <br>
+        <form class="" action="/historial" method="get">
+
+            {{-- <input type="hidden" name="id" value="{{$usuario->id}}"> --}}
+          <input type="submit" name="" value="Ver historial de mis compras">
+          @csrf
+
+        </form>
 
       </article>
     </section>

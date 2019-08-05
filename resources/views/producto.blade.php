@@ -18,6 +18,8 @@
           <button type="submit">Agregar al carrito</button>
         </form>
 
+
+        @if(Auth::user()->isadmin==1)
         <form class="" action="/editarproducto/{{$producto->id}}" method="get">
 
             {{-- <input type="hidden" name="id" value="{{$producto->id}}"> --}}
@@ -33,6 +35,7 @@
           @csrf
 
         </form>
+        @endif
         <img src="/storage/producto/{{$producto->imagen}}" alt="">
 
       </article>

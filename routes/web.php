@@ -28,24 +28,22 @@ Route::get('/agregarproducto', 'ProductoController@create')->middleware('admin')
 Route::post('/agregarproducto', 'ProductoController@store')->middleware('admin');
 
 
-Route::get('/editarproducto/{id}', 'ProductoController@edit');
-Route::post('/actualizarproducto/{id}', 'ProductoController@update');
+Route::get('/editarproducto/{id}', 'ProductoController@edit')->middleware('admin');
+Route::post('/actualizarproducto/{id}', 'ProductoController@update')->middleware('admin');
 
-Route::get('/borrarproducto/{id}','ProductoController@destroy');
+Route::get('/borrarproducto/{id}','ProductoController@destroy')->middleware('admin');
+
 
 Route::post('/agregaralcarrito', 'CarritoController@store')->middleware('auth');
 Route::get('/borrardelcarrito/{id}', 'CarritoController@destroy')->middleware('auth');
 Route::get('/carrito', 'CarritoController@index')->middleware('auth');  //Mostramos el carrito abierto.
 Route::post('/cerrarcarrito', 'CarritoController@cerrarcarrito')->middleware('auth');
-
-
-
 Route::get('/historial', 'CarritoController@historial')->middleware('auth');
 
-Route::get('/usuarios', 'UserController@index');
+Route::get('/usuarios', 'UserController@index')->middleware('admin');
 
-Route::get('/miperfil/{id}', 'UserController@show');
-Route::get('/editarmiperfil/{id}', 'UserController@edit');
-Route::post('/actualizarmiperfil/{id}', 'UserController@update');
+Route::get('/miperfil', 'UserController@show');
+Route::get('/editarmiperfil', 'UserController@edit');
+Route::post('/actualizarmiperfil', 'UserController@update');
 
 Route::get('/faqs','FaqsController@index');
