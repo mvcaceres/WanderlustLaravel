@@ -22,7 +22,7 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -62,7 +62,7 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('telefono') }}</label>
+                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
                                 <input id="telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
@@ -82,7 +82,7 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('direccion') }}</label>
+                            <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('Direccion') }}</label>
 
                             <div class="col-md-6">
                                 <input id="direccion" type="text" class="form-control @error('direccion') is-invalid @enderror" name="direccion" value="{{ old('direccion') }}" required autocomplete="direccion" autofocus>
@@ -102,7 +102,7 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="ciudad" class="col-md-4 col-form-label text-md-right">{{ __('ciudad') }}</label>
+                            <label for="ciudad" class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
 
                             <div class="col-md-6">
                                 <input id="ciudad" type="text" class="form-control @error('ciudad') is-invalid @enderror" name="ciudad" value="{{ old('ciudad') }}" required autocomplete="ciudad" autofocus>
@@ -122,14 +122,14 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('provincia') }}</label>
-
+                            <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
+                            
                             <div class="col-md-6">
-                                <input id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
-
+                                <select id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
+                                </select>
                                 @error('provincia')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>" Ingrese su provincia"</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -142,14 +142,14 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="codigoPostal" class="col-md-4 col-form-label text-md-right">{{ __('codigoPostal') }}</label>
+                            <label for="codigoPostal" class="col-md-4 col-form-label text-md-right">{{ __('Codigo Postal') }}</label>
 
                             <div class="col-md-6">
                                 <input id="codigoPostal" type="text" class="form-control @error('codigoPostal') is-invalid @enderror" name="codigoPostal" value="{{ old('codigoPostal') }}" required autocomplete="codigoPostal" autofocus>
 
                                 @error('codigoPostal')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>"Ingrese el codigo postal"</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -161,14 +161,14 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electronico') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>"Ingrese su correo electronico"</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -179,14 +179,15 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>"Ingrese su contraseña"
+                                    </strong>
                                     </span>
                                 @enderror
                             </div>
@@ -197,7 +198,7 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -210,14 +211,14 @@
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
                         <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('foto') }}</label>
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto de Perfil') }}</label>
 
                             <div class="col-md-6">
                                 <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
 
                                 @error('foto')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>"Suba una foto de perfil"</strong>
                                     </span>
                                 @enderror
                             </div>

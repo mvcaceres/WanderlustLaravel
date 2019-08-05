@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
       <link rel="stylesheet" href={{ URL::asset('css/register.css') }}>
-    <script type="text/javascript" src="js/api.js">
-
-    </script>
+    <link rel="stylesheet" href={{ URL::asset('css/productos.css') }}>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   </head>
 
@@ -92,9 +90,9 @@
         <!-- fin menu hamburguesa para mobile -->
 
         <!-- logo principal -->
-    
+
         <img id= "logoPrincipal" src= "{{ asset('img/logoWanderlust.png') }}" alt="logoW">
-    
+
         <!-- fin logo principal -->
 
         <!-- Opciones para tablet y desktop -->
@@ -182,6 +180,7 @@
     <p class="copyrights">Copyright &copy Todos los derechos reservados Wanderlust- 2019</p>
 
   </footer>
-
+  <script  src="js/api.js"></script>
+  <script  src="js/validacionFormulario.js"></script>
   </body>
 </html>

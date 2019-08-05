@@ -1,8 +1,14 @@
 @extends('layouts.plantilla')
 
 @section('sectionContenido')
+<main id="productos">
+<h1>Lista de <span> productos</span></h1>
+<div class="barra-opciones">
 
-<h1>Lista de productos</h1>
+
+
+
+
     <a href="/productos">Todos</a>
     <a href="/categoria/1">Maletas</a>
     <a href="/categoria/2">Mochilas</a>
@@ -10,9 +16,11 @@
     <a href="/categoria/4">Paraguas</a>
     <a href="/categoria/5">Bolsos</a>
     <a href="/categoria/6">Otros</a>
+</div>
+
     <section>
       @foreach ($productos as $producto)
-      <article>
+      <article class="form">
         <p>Categoría: <a href="/categoria/{{$producto->categoria_id}}">{{$producto->categoria_id}}</a></p>
         <p>Nombre: {{$producto->nombre}}</p>
         <p>Precio: {{$producto->precio}}</p>
@@ -23,5 +31,5 @@
       </article>
       @endforeach
     </section>
-
+</main>
 @endsection
