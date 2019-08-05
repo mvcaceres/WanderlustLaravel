@@ -1,7 +1,12 @@
 @extends('layouts.plantilla')
 
 @section('sectionContenido')
-<div class="container">
+    <!-- AGREGAR AL PROYECTO -->
+
+  <main id='login'>
+  <div class="container">
+      <h3>Iniciar <span>sesion</span> </h3>
+      <!-- HASTA ACA -->
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -10,7 +15,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        <div class="form">
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail: ') }}</label>
 
@@ -24,7 +29,10 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <!-- AGREGAR AL PROYECTO en cada item-->
+                      </div>
+                      <div class="form">
+                        <!-- HASTA ACA -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña: ') }}</label>
 
@@ -38,7 +46,9 @@
                                 @enderror
                             </div>
                         </div>
-
+                      <!-- AGREGAR AL PROYECTO en cada item-->
+                      </div>
+                        <!-- HASTA ACA -->
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -70,4 +80,5 @@
         </div>
     </div>
 </div>
+</main>
 @endsection

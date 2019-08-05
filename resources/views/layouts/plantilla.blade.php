@@ -13,12 +13,14 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+      <link rel="stylesheet" href={{ URL::asset('css/register.css') }}>
     <script type="text/javascript" src="js/api.js">
 
     </script>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   </head>
 
   <body>
@@ -99,7 +101,7 @@
         <div class="opciones">
             <nav class="navPrincipal">
                 <a href="/productos" class="botones">PRODUCTOS</a>
-                <a href="faqs.html" class="botones">PREGUNTAS FRECUENTES</a>
+                <a href="/faqs" class="botones">PREGUNTAS FRECUENTES</a>
                 <!-- solo desktop: -->
                 @guest
                     <li class="nav-item">

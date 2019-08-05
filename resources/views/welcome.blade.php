@@ -57,7 +57,7 @@ if($_POST){
           <li>
             <div class="producto">
               <img src="img/producto3.jpg" alt="img producto">
-              <p>Neck Pillow</p>
+              <p>Neck Pillows</p>
             </div>
           </li>
 

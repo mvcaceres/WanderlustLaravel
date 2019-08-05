@@ -5,23 +5,25 @@
 html {
     font-family: sans-serif;
 }
-
-main#login{
+main#register{
   font-family: 'Noto Sans KR', sans-serif;
   text-align:left;
-  background-image: url("../img/fondoLogin.jpg");
+  background-image: url("../img/sra_maleta.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;
-  height:100%;
+  padding:5%;
   background-position-x: center;
-  padding:3%;
+
   margin-top:-35px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 
+
 h3{
-    font-size: 1.7em;
+    font-size:1.7em;
     text-transform:uppercase;
     padding-top:60px;
     color: #189D98;
@@ -41,6 +43,7 @@ p.frase{
     line-height: 1.5;
     _padding: 3;
     margin: 5px;
+    max-width: 400px;
 }
 div.card{
   padding: 3px;
@@ -95,16 +98,14 @@ a.btn.btn-link{
         margin-top:0px;
         background-size: cover;
         _width:100%;
-        height:100%;
+        _height:50%;
     }
 
 
     h3{
         padding-top:20px;
     }
-    p.form{
-        _width:50%;
-    }
+
 }
 @media (min-width:979px){
     main{

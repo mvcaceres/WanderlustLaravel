@@ -2,6 +2,8 @@
 
 @section('sectionContenido')
 
+
+
 <h1>Editar producto: {{ $producto->name }}</h1>
 
     <section>
@@ -164,5 +166,3 @@
           </div>
       </div>
     </section>
-
-@endsection

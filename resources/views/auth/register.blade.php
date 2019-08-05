@@ -2,6 +2,13 @@
 
 @section('sectionContenido')
 <div class="container">
+  <!-- AGREGAR para que funciones el css el class containery la div calss form-->
+
+  <main id="register">
+  <div class="container">
+    <h3>¡UNITE A <span>WANDERLUST!</span> </h3>
+    <p class="frase">Completá tus datos y comenzá a disfrutar los beneficios de Wanderlust:</p>
+  <!-- HASTA ACA -->
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -12,6 +19,8 @@
                         @csrf
 
                         <!-- nombre -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -25,9 +34,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin nombre -->
 
                         <!-- apellido -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="apellido" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
@@ -41,9 +54,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin apellido -->
 
                         <!-- telefono -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('telefono') }}</label>
 
@@ -57,9 +74,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin telefono -->
 
                         <!-- direccion -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('direccion') }}</label>
 
@@ -73,9 +94,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin direccion -->
 
                         <!-- ciudad -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="ciudad" class="col-md-4 col-form-label text-md-right">{{ __('ciudad') }}</label>
 
@@ -89,9 +114,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin ciudad -->
 
                         <!-- provincia -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('provincia') }}</label>
 
@@ -105,9 +134,13 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin provincia -->
 
                         <!-- codigoPostal -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="codigoPostal" class="col-md-4 col-form-label text-md-right">{{ __('codigoPostal') }}</label>
 
@@ -121,9 +154,12 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin codigoPostal -->
 
-
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -137,7 +173,11 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
 
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -151,7 +191,11 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
 
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
@@ -159,8 +203,12 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
 
                         <!-- foto -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
                         <div class="form-group row">
                             <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('foto') }}</label>
 
@@ -174,6 +222,8 @@
                                 @enderror
                             </div>
                         </div>
+                      </div>
+                      <!-- y el div de cierre -->
                         <!-- fin foto -->
 
                         <div class="form-group row mb-0">
@@ -189,4 +239,5 @@
         </div>
     </div>
 </div>
+</main>
 @endsection

@@ -6,6 +6,8 @@ use App\Producto;
 use App\Categoria;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use isadmin;
 
 class ProductoController extends Controller
 {
@@ -156,7 +158,7 @@ class ProductoController extends Controller
 
           $producto->save();
 
-          return view('producto', compact('producto'));
+          return redirect('/producto');
 
       }
 
