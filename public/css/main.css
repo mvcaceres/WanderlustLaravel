@@ -25,9 +25,6 @@ header{
   justify-content: space-between;
 }
 
-a{
-  text-decoration:none !important;
-}
 /* barra superior */
 .barraSuperior{
   height: 50px;
@@ -67,6 +64,7 @@ li.nav-item{
 .inicioRegistro a{
 }
 .nav-item a{
+  text-decoration: none;
   color: white;
   margin-left: 5px;
   font-size: 10px;
@@ -75,6 +73,8 @@ li.nav-item{
       background-color: #189D98;
   text-align: center;
 }
+
+
 
 .inicioRegistro .botones{
   background-color: #189D98;
@@ -96,6 +96,30 @@ background-color: #1C6A89;
 display: flex;
 align-items: center;
 justify-content: space-evenly;
+}
+.fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+nav.navegacion-hamburguesa{
+  width:100%;
+  display:none;
+  padding: 30px 0px 10px 0px;
+  background-color:#1C6A89;
+}
+nav.navegacion-hamburguesa a{
+  width:100%;
+  text-decoration:none;
+  text-transform:uppercase;
+  display:inline-block;
+  text-align:center;
+  padding-top:20px;
+  font-family:Arial, Helvetica, sans-serif;
+  color:white;
 }
 
 .barraInferior li{
@@ -166,10 +190,12 @@ display: none;
     border: 2px solid #1C6A89;
     text-align: center;
     background-color: #1C6A89;
+    text-decoration: none;
   }
 
   .opciones .botonesD{
     display: none;
+    text-decoration: none;
   }
 
   .navPrincipal{
@@ -240,7 +266,11 @@ display: none;
     font-size: 25px;
     padding: 5px;
     color: white;
+  }
 
+  .carritoD a{
+    text-decoration: none;
+    color: white;
   }
 
   .navPrincipal{
@@ -324,6 +354,7 @@ display: none;
   .contenedor-dibujo img{
     height:120px;
     width: 120px;
+    display:contents;
   }
 
 }
@@ -347,6 +378,7 @@ display: none;
   .contenedor-dibujo img{
     height:180px;
     width: 180px;
+
   }
 
 }
@@ -488,7 +520,7 @@ div.producto:hover p{
     -webkit-transform: scale(1.1);
   }
 }
-/* fin productos */
+/* fin productos *//* fin productos *//* fin productos */
 
 
 /**DESCUENTOS/fondo-inmovil**/
@@ -754,6 +786,8 @@ footer .contenedor{
   padding-bottom: 20px;
 }
 
+
+
 footer .contenedor > div{
   color: #ffffff!important;
   padding: 0px 20px;
@@ -772,6 +806,7 @@ footer h3{
   text-transform: uppercase;
   font-family: 'Noto Sans KR', sans-serif;
   margin-bottom: 20px;
+  text-align: center;
 }
 footer h3 span{
   color: #189D98;

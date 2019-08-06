@@ -1,13 +1,21 @@
 @extends('layouts.plantilla')
 
-@section('sectionContenido')
+@section('css')
+<link rel="stylesheet" href={{ URL::asset('css/vistaproducto.css') }}>
+@endsection
 
-<h1>Detalle del producto</h1>
-    <section>
-      <article>
-        <p>Nombre: {{$producto->nombre}}</p>
-        <p>Descripción: {{$producto->descripcion}}</p>
-        <p>Precio: {{$producto->precio}}</p>
+@section('sectionContenido')
+<main id="producto">
+
+<h1>DETALLE DEL <span>PRODUCTO</span></h1>
+
+<section class="producto">
+      <article class="card">
+        <img src="storage/app/public/producto{{$producto->imagen}}" alt="">
+        <div class="bloque">
+        <p class="nom"> {{$producto->nombre}}</p>
+        <p class="desc">Descripción: {{$producto->descripcion}}</p>
+        <p class="prec">Precio $ {{$producto->precio}}</p>
         {{-- <p><a href="#">Comprar</a></p> --}}
         <form class="" action="/agregaralcarrito" method="post">
           @csrf
@@ -17,11 +25,8 @@
           <p></p>
           <button type="submit">Agregar al carrito</button>
         </form>
-
-
-        @if(Auth::user()->isadmin==1)
+        <div class="botones">
         <form class="" action="/editarproducto/{{$producto->id}}" method="get">
-
             {{-- <input type="hidden" name="id" value="{{$producto->id}}"> --}}
           <input type="submit" name="" value="Editar Producto">
           @csrf
@@ -34,11 +39,10 @@
           <input type="submit" name="" value="Borrar Producto">
           @csrf
 
-        </form>
-        @endif
-        <img src="/storage/producto/{{$producto->imagen}}" alt="">
-
-      </article>
+          </form>
+        </div>
+      </div>
+        </article>
     </section>
-
+  </main>
 @endsection

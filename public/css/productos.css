@@ -7,7 +7,6 @@ html {
 }
 main#productos{
   font-family: 'Noto Sans KR', sans-serif;
-  text-align:left;
   padding:5%;
   margin-top:15px;
   margin-left: 20px;
@@ -18,7 +17,6 @@ h1{
     font-size:1.7em;
     text-transform:uppercase;
     text-align: center;
-    _padding-top:30px;
     margin-top: 30px;
     color: #189D98;
 }
@@ -37,7 +35,7 @@ h1 span{
   text-decoration: none;
   color: white;
   margin: 5px;
-  padding: 2px;
+  padding: 5px;
   border: 2px solid #189D98;
   background-color: #189D98;
   text-align: center;
@@ -53,33 +51,72 @@ section{
 }
 
 article.form{
+    flex-wrap: wrap;
+    display: flex;
     color:rgb(255, 255, 255);
     font-weight: normal;
     margin:5px;
+    padding: 15px;
     background-color:rgba(44, 42, 42, 0.2);
-    width: 300px;;
+    width: 300px;
+    height: 410px;
+    _justify-content: center;
+    justify-content: space-between;
+}
+
+article.form img{
+    width: 270px;
+    margin: 15px;
 }
 
 p{
     color: rgb(49, 49, 49);
     font-weight: normal;
     line-height: 1.5;
-    _padding: 3;
     margin: 10px;
+    text-align: left;
+    text-decoration: none;
+}
+
+p.cate{
+    display: none;
+}
+
+p.nom{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    align-self: center;
+    size: 40px;
+    color: #189D98;
+}
+
+p.prec{
+    font-weight: bold;
+    size: 20px;
+    text-align: left;
+}
+
+p.mas{
+    font-weight: normal;
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    font-size: 12px;
+    border-color: white;
+    border: 2px;
+    background-color: white;
+
 }
 
 @media (min-width:767px){
-    main{
-        _margin-top:0px;
-        _width:100%;
-        _height:50%;
+  main#productos{
+    padding:3%;
     }
 
 }
 @media (min-width:979px){
-    main{
-        _margin-top:0px;
-        _padding-top:20px;
-    }
+
 
 }

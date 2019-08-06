@@ -15,10 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-      <link rel="stylesheet" href={{ URL::asset('css/register.css') }}>
-    <link rel="stylesheet" href={{ URL::asset('css/productos.css') }}>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+@yield('css')
   </head>
 
   <body>
@@ -144,7 +142,13 @@
         <!-- fin opciones para tablet y desktop -->
     </div>
 <!-- fin barra inferior  -->
+<nav class="navegacion-hamburguesa">
 
+        <a href="/productos">Productos</a>
+        <a href="/faqs">Preguntas frecuentes</a>
+        <a href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
+        <a href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+    </nav>
     </header>
 <!--///Fin contenido-header///-->
 
@@ -182,5 +186,28 @@
   </footer>
   <script  src="js/api.js"></script>
   <script  src="js/validacionFormulario.js"></script>
+  <script>    //FIJACION DE BARRA NAVEGACION
+  var windowHeight = $(window).height();
+  var barraAltura = $('#main-nav').innerHeight()+30;
+  // console.log(barraAltura);
+  $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if(scroll > barraAltura) {
+          $('#main-nav').addClass('fixed');
+          //Al crear la clase voy al main de css y aplico propiedades a la clase fixed
+          $('#logoPrincipal').addClass('ocultar');
+      } else {
+          $('#main-nav').removeClass('fixed');
+          $('#logoPrincipal').removeClass('ocultar');
+
+      }
+  });
+
+  //MENU HAMBURGUESA
+
+  $('.menuHamburguesa').on('click', function(){
+      $('nav.navegacion-hamburguesa').slideToggle();
+  });</script>
+@yield('js')
   </body>
 </html>
