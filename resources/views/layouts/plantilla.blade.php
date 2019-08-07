@@ -89,7 +89,7 @@
 <!-- fin barra superior mobile y tablet -->
 
 <!-- barra inferior  -->
-    <div class="barraInferior">
+    <div class="barraInferior" id="main-nav">
         <!-- menu hamburguesa para mobile -->
         <div class="menuHamburguesa">
             <img id= "logoHamburguesa" src="{{ asset('img/menuHamburguesa.png') }}" alt="logoW">

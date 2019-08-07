@@ -52,6 +52,7 @@ class UserController extends Controller
 
           $usuario = Auth::user();
 
+
           if($request['foto']){
             $path = $request->file('foto')->store('/public/userFoto');
             $file = basename($path);

@@ -8,11 +8,11 @@ window.onload = function(){
         var select = document.querySelector('select.provincia');
 
         for(var i = 0; i < respuesta.data.length; i++){
-            //console.log(respuesta.data[i].curso);
+            //console.log(respuesta.data[i]);
             var nombreProvincia = respuesta.data[i].state;
             var option = document.createElement('option');
             option.innerText = nombreProvincia;
-            option.setAttribute('value',respuesta.data[i].id);
+            option.setAttribute('value',nombreProvincia);
             select.append(option);
         }
     })
@@ -21,6 +21,6 @@ window.onload = function(){
     });
 
 
-  
+
 
 }

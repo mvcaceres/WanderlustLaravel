@@ -52,6 +52,21 @@
                               </div>
                               <!-- fin direccion -->
 
+                              <!-- provincia -->
+                                <div class="lineasDatos">
+                                  <label for="provincia">Provincia:</label>
+                                  <div class="nuevo">
+                                  <select class="provincia" type="text" name="provincia" required autocomplete="provincia" autofocus>Provincia
+                                    <option>{{$usuario->provincia}}</option>
+                                  </select>
+                                  </div>
+
+                              </div>
+
+
+
+                              <!-- fin provincia -->
+
                               <!-- ciudad -->
                                 <div class="lineasDatos">
                                   <label for="ciudad">Ciudad:</label>
@@ -60,15 +75,6 @@
                                   </div>
                               </div>
                               <!-- fin ciudad -->
-
-                              <!-- provincia -->
-                                <div class="lineasDatos">
-                                  <label for="provincia">Provincia:</label>
-                                  <div class="nuevo">
-                                  <select class="provincia" type="text" name="provincia" value="{{$usuario->provincia}}" required autocomplete="provincia" autofocus>Provincia</select>
-                                  </div>
-                              </div>
-                              <!-- fin provincia -->
 
                               <!-- codigoPostal -->
                                 <div class="lineasDatos">
@@ -99,7 +105,7 @@
                                       </div>
                                   </div>
                                   <div id=divNuevoImg class="nuevo">
-                                  <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="/storage/userFoto/{{$usuario->foto}}" required autocomplete="foto" autofocus>
+                                  <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="/storage/userFoto/{{$usuario->foto}}" autocomplete="foto" autofocus>
                                   </div>
                                   </div>
 
