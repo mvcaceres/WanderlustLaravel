@@ -14,7 +14,7 @@
 txtNombre.onblur = function() {
     if(this.value.trim() == ''){
         alert('El campo de Nombre no puede estar vacio');
-        name.style.borderColor = "red";
+        this.style.borderColor = "red";
         lblname.style.color = "red";
 
     } else if(this.value.length <= 3){
@@ -27,7 +27,7 @@ txtNombre.onblur = function() {
  txtApellido.onblur = function () {
     if(this.value.trim() == ''){
         alert('El campo de Apellido no puede estar vacio');
-        apellido.style.borderColor = "red";
+        this.style.borderColor = "red";
         lblapellido.style.color = "red";
     } else if(this.value.length <= 3){
         alert('El campo Apellido debe tener un minimo de 3 letras');

@@ -35,6 +35,13 @@ class DatabaseSeeder extends Seeder
             'nombre' => 'Otros',
         ]);
 
+        //se podría hacer lo mismo seteando un administrador, estableciendo por ejemplo
+        //mail "admin@admin.com" y pass "admin"
+        // DB::table('user')->insert([
+        //     'email' => 'admin@admin.com',
+        //     'pass' => 'admin'
+        // ]);
+
         factory(\App\Producto::class, 40)->create();
         factory(\App\User::class, 7)->create();
         // $maletas =
