@@ -15,7 +15,10 @@
             Código de compra: 000{{$cart[0]->numerocarrito}}
             @foreach ($cart as $item)
             <section class="card">
-              <li>{{$item->nombre}}, {{$item->precio}}</li>
+              <li>{{$item->nombre}}, {{$item->precio}}
+                <br>
+                Cantidad: {{$item->cantidad}}
+              </li>
             @endforeach
               </section>
               </div>
