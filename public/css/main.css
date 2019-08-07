@@ -742,6 +742,37 @@ p.numero img{
   font-style: normal;
 }
 
+
+/* paginación */
+ul.pagination{
+  margin-top: 50px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0px;
+  justify-content: space-around;
+  max-width: 50%;
+  margin: auto;
+
+}
+ul.pagination li a{
+  text-decoration: none;
+  color: #189D98;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+ul.pagination li span{
+  text-decoration: none;
+  color: #189D98;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+
+
+
 @media (min-width: 480px){
   .testimonialesContenedor{
       flex-direction: row;
