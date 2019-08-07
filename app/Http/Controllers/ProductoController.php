@@ -68,9 +68,6 @@ class ProductoController extends Controller
           $path = $request->file('imagen')->store('/public/producto');
           $file = basename($path);
 
-
-
-
           $nuevoProducto->categoria_id = $request["categoria_id"];
           $nuevoProducto->nombre = $request["nombre"];
           $nuevoProducto->descripcion = $request["descripcion"];

@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'ciudad' => ['required', 'string', 'max:50'],
             'provincia' => ['required', 'string', 'max:50'],
             'codigoPostal' => ['required', 'string', 'max:10'],
-            'foto' => ['string', 'max:200'],
+            'foto' => ['required','image'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed']
 
@@ -71,6 +71,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $request = request();
+
+      $imagen = $request->file('foto');
+      if($imagen){
+        $imagenfinal=uniqid("img_").".".$imagen->extension();
+        $imagen->storePubliclyAs("public/userFoto",$imagenfinal);
+      }
+
+
         return User::create([
           'name' => $data['name'],
           'apellido' => $data['apellido'],
@@ -81,7 +90,7 @@ class RegisterController extends Controller
           'codigoPostal' => $data['codigoPostal'],
           'email' => $data['email'],
           'password' => Hash::make($data['password']),
-          'foto' => $data['foto']
+          'foto' => $imagenfinal
         ]);
     }
 }

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 @yield('css')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
 
   <body>
@@ -57,6 +58,12 @@
                     Hola, {{Auth::user()->name }} <span class="caret"></span>
                     </a>
 
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -70,7 +77,9 @@
 
             <!-- carrito: -->
             <div class="carrito">
+              <a href="/carrito">
               <i class="fas fa-shopping-cart"></i>
+              </a>
             </div>
             <!-- fin Carrito -->
       </div>
@@ -88,8 +97,14 @@
         <!-- fin menu hamburguesa para mobile -->
 
         <!-- logo principal -->
+        <div id="divLogo">
+          <div id="divLogo2">
+            <a id="aLogo" href="/home">
+            <img id="imgLogo" src="{{ asset('img/logoWanderlust.png') }}" alt="logoW">
+            </a>
+          </div>
+        </div>
 
-        <img id= "logoPrincipal" src= "{{ asset('img/logoWanderlust.png') }}" alt="logoW">
 
         <!-- fin logo principal -->
 
@@ -142,15 +157,37 @@
         <!-- fin opciones para tablet y desktop -->
     </div>
 <!-- fin barra inferior  -->
+
+    </header>
+<!--///Fin contenido-header///-->
 <nav class="navegacion-hamburguesa">
 
         <a href="/productos">Productos</a>
         <a href="/faqs">Preguntas frecuentes</a>
+        @guest
         <a href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
+        @if (Route::has('register'))
         <a href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+        @endif
+        @else
+        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/miperfil">
+        Ver mi perfil<span class="caret"></span>
+        </a>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        @endguest
+
     </nav>
-    </header>
-<!--///Fin contenido-header///-->
+
+
+
 
 @yield('sectionContenido')
 

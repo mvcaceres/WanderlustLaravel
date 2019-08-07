@@ -126,6 +126,7 @@ nav.navegacion-hamburguesa a{
       display: none;
     }
 
+
 #logoPrincipal{
 height: auto;
 width: 70%;
@@ -143,6 +144,45 @@ display: none;
 display: none;
 }
 
+.carrito{
+  display: inline-block;
+  font-size: 25px;
+  padding: 5px;
+  color: white;
+}
+
+.carrito a{
+  text-decoration: none;
+  color: white;
+}
+
+div#divLogo{
+
+  width: 250px;
+
+
+}
+div#divLogo2{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+a#aLogo{
+  text-decoration: none;
+  color:transparent;
+  cursor: pointer;
+}
+img#imgLogo{
+  width: 250px;
+  margin-top: 5px;
+  margin-left: 5%;
+
+
+}
+
 /* media queries HEADER tablet y desktop */
 
 /* tablet: */
@@ -158,9 +198,7 @@ display: none;
     height: 40px;
   }
 
-  .barraSuperior-derecha{
-    flex-direction: row-reverse;
-  }
+
 
   .barraInferior{
     height: 40px;
@@ -203,7 +241,30 @@ display: none;
     display: flex;
     align-items: center;
   }
+  div#divLogo{
+    margin-left: 20px;
+    width: 180px;
 
+
+  }
+  div#divLogo2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+  }
+  a#aLogo{
+    text-decoration: none;
+    color:transparent;
+    cursor: pointer;
+  }
+  img#imgLogo{
+    width: 200px;
+    margin-top: 5px;
+
+
+  }
 }
 
 /* desktop: */
@@ -213,6 +274,7 @@ display: none;
     height: 130px;
         width: inherit;
   }
+
 
   .barraSuperior{
     background-color: transparent;
@@ -281,6 +343,7 @@ display: none;
   .barraInferior li{
         display: contents;
       }
+
 }
 
 /* fin HEADER */
@@ -784,6 +847,9 @@ footer.site-footer .footer-information{
 
 footer .contenedor{
   padding-bottom: 20px;
+}
+.footer-information p{
+  color: white;
 }
 
 

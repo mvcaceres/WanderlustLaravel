@@ -1,22 +1,6 @@
 @extends('layouts.plantilla')
 
 <!-- php -->
-@section('sectionPhp')
-<?php
-session_start();
-
-// var_dump($_SESSION);
-// var_dump($_COOKIE['email']);
-
-if($_POST){
-  if(isset($_POST['logout'])){
-    session_destroy();
-    setcookie('email',"",time()-100);
-    header('Location:index.php');
-  }
-}
-?>
-@endsection
 
 <!-- body -->
 @section('sectionContenido')
@@ -42,42 +26,50 @@ if($_POST){
     <ul class="lista-productos ">
           <li>
             <div class="producto">
-              <img src="img/producto1.jpg" alt="img producto">
+              <a href="/categoria/1">
+              <img  src="img/producto1.jpg" alt="img producto"></a>
               <p>Maletas</p>
+
+
             </div>
           </li>
 
           <li>
             <div class="producto">
-              <img src="img/producto2.jpg" alt="img producto">
+              <a href="/categoria/2">
+              <img src="img/producto2.jpg" alt="img producto"></a>
               <p>Mochilas</p>
             </div>
           </li>
 
           <li>
             <div class="producto">
-              <img src="img/producto3.jpg" alt="img producto">
+              <a href="/categoria/3">
+              <img src="img/producto3.jpg" alt="img producto"></a>
               <p>Neck Pillows</p>
             </div>
           </li>
 
           <li>
             <div class="producto">
-              <img src="img/producto4.jpg" alt="img producto">
+              <a href="/categoria/4">
+              <img src="img/producto4.jpg" alt="img producto"></a>
               <p>Paraguas</p>
             </div>
           </li>
 
           <li>
             <div class="producto">
-              <img src="img/producto5.jpg" alt="img producto">
+              <a href="/categoria/5">
+              <img src="img/producto5.jpg" alt="img producto"></a>
               <p>Bolsos</p>
             </div>
           </li>
 
           <li>
             <div class="producto">
-              <img src="img/producto6.jpg" alt="img producto">
+              <a href="/categoria/6">
+              <img src="img/producto6.jpg" alt="img producto"></a>
               <p>Otros</p>
             </div>
           </li>

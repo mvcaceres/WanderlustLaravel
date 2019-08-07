@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('isadmin')->nullable()->default('0');
             $table->string('name',50);
             $table->string('apellido',50);
-            $table->string('telefono',20);
+            $table->string('telefono',50);
             $table->string('direccion',100);
             $table->string('ciudad',50);
             $table->string('provincia',50);

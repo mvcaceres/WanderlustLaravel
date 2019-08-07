@@ -8,7 +8,6 @@ html {
 
 main#login{
   font-family: 'Noto Sans KR', sans-serif;
-  text-align:left;
   background-image: url("../img/fondoLogin.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,6 +21,7 @@ main#login{
 
 h3{
     font-size: 1.7em;
+    text-align:left;
     text-transform:uppercase;
     padding-top:60px;
     color: #189D98;
@@ -48,23 +48,29 @@ div.card{
 }
 
 div.form{
-    color:rgb(255, 255, 255);
-    font-weight: bold;
-    margin:15px 5px;
-    padding:10px;
-    background-color:rgba(44, 42, 42, 0.5);
-    max-width: 350px;
-    display:flex;
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  margin:10px 5px;
+  padding:0px;
+  background-color:rgba(44, 42, 42, 0.5);
+  width: 325px;
+  height: 50px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  _align-content: space-around;
+  justify-content: space-between;
+}
 
+div.form label{
+  padding: 10px;
 }
-    /* no se que es */
-p.email{
-    __background-color:rgba(32, 105, 137,0.7);
+div.form input{
+  margin-right: 10px;
+  margin-bottom:3px;
 }
-    /* no se que es */
-p.form:nth-last-child{
-    __margin-top:30px;
-}
+
 button{
     background-color:rgb(32,105,137);
     padding: 15px 40px;
@@ -77,10 +83,7 @@ button input:hover{
     background-color:rgb(39, 153, 202);
     transition: all .3s ease;
 }
-    /* no se que es */
-nav.navegacion-principal a.botones{
-    __font-weight: bold;
-  }
+
 div.form-check{
     margin-bottom: 20px;
   }
@@ -98,12 +101,14 @@ a.btn.btn-link{
         height:100%;
     }
 
+    div.form{
+        width: 350px;
+        margin:15px 5px;
+        padding:10px;
+    }
 
     h3{
         padding-top:20px;
-    }
-    p.form{
-        _width:50%;
     }
 }
 @media (min-width:979px){

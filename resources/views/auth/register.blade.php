@@ -1,6 +1,11 @@
 @extends('layouts.plantilla')
 
+@section('css')
+<link rel="stylesheet" href={{ URL::asset('css/register.css') }}>
+@endsection
+
 @section('sectionContenido')
+
 <div class="container">
   <!-- AGREGAR para que funciones el css el class containery la div calss form-->
 
@@ -10,18 +15,17 @@
     <p class="frase">Completá tus datos y comenzá a disfrutar los beneficios de Wanderlust:</p>
   <!-- HASTA ACA -->
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <!-- nombre -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
@@ -33,7 +37,6 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin nombre -->
@@ -41,7 +44,6 @@
                         <!-- apellido -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
                             <label for="apellido" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
                             <div class="col-md-6">
@@ -54,14 +56,12 @@
                                 @enderror
                             </div>
                         </div>
-                      </div>
                       <!-- y el div de cierre -->
                         <!-- fin apellido -->
 
                         <!-- telefono -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
@@ -73,7 +73,6 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin telefono -->
@@ -81,7 +80,6 @@
                         <!-- direccion -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
                             <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('Direccion') }}</label>
 
                             <div class="col-md-6">
@@ -93,15 +91,35 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin direccion -->
 
+
+                        <!-- provincia -->
+                        <!-- AGREGAR al incio de cada div para que funciones el css -->
+                        <div class="form">
+
+                            <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus></select>
+
+                                @error('provincia')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                      <!-- y el div de cierre -->
+                        <!-- fin provincia -->
+
                         <!-- ciudad -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
+
                             <label for="ciudad" class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
 
                             <div class="col-md-6">
@@ -113,72 +131,52 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin ciudad -->
 
-                        <!-- provincia -->
-                        <!-- AGREGAR al incio de cada div para que funciones el css -->
-                        <div class="form">
-                        <div class="form-group row">
-                            <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
-                            
-                            <div class="col-md-6">
-                                <select id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
-                                </select>
-                                @error('provincia')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>" Ingrese su provincia"</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                      </div>
-                      <!-- y el div de cierre -->
-                        <!-- fin provincia -->
-
                         <!-- codigoPostal -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
-                            <label for="codigoPostal" class="col-md-4 col-form-label text-md-right">{{ __('Codigo Postal') }}</label>
+
+                            <label for="codigoPostal" class="col-md-4 col-form-label text-md-right">{{ __('CodigoPostal') }}</label>
 
                             <div class="col-md-6">
                                 <input id="codigoPostal" type="text" class="form-control @error('codigoPostal') is-invalid @enderror" name="codigoPostal" value="{{ old('codigoPostal') }}" required autocomplete="codigoPostal" autofocus>
 
                                 @error('codigoPostal')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>"Ingrese el codigo postal"</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin codigoPostal -->
 
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electronico') }}</label>
+
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>"Ingrese su correo electronico"</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
 
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
+
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
@@ -186,43 +184,42 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>"Ingrese su contraseña"
-                                    </strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
 
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
 
                         <!-- foto -->
                         <!-- AGREGAR al incio de cada div para que funciones el css -->
                         <div class="form">
-                        <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto de Perfil') }}</label>
+
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
 
                             <div class="col-md-6">
                                 <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
 
                                 @error('foto')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>"Suba una foto de perfil"</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+
                       </div>
                       <!-- y el div de cierre -->
                         <!-- fin foto -->
@@ -230,7 +227,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrarme') }}
                                 </button>
                             </div>
                         </div>

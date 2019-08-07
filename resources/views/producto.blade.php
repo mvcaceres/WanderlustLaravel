@@ -11,7 +11,7 @@
 
 <section class="producto">
       <article class="card">
-        <img src="storage/app/public/producto{{$producto->imagen}}" alt="">
+        <img id="imagenProducto" src="/storage/producto/{{$producto->imagen}}" alt="">
         <div class="bloque">
         <p class="nom"> {{$producto->nombre}}</p>
         <p class="desc">Descripción: {{$producto->descripcion}}</p>
