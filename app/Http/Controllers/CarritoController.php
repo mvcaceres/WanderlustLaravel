@@ -18,10 +18,10 @@ class CarritoController extends Controller
     {
         $carts = Carrito::where('estado',0)
         ->where('user_id', Auth::user()->id)
-        ->get(); 
+        ->get();
 
         $carts = Carrito::all()->where('estado',0)
-        ->where('user_id', Auth::user()->id); 
+        ->where('user_id', Auth::user()->id);
         $total = 0;
 
         foreach ($carts as $item) {
@@ -127,7 +127,7 @@ class CarritoController extends Controller
     {
         $item = Carrito::where('id',$id)
         ->where('user_id',Auth::user()->id)
-        ->where('estado',0)->get(); 
+        ->where('estado',0)->get();
 
         $item[0]->delete();
         return redirect('/carrito');
@@ -136,7 +136,7 @@ class CarritoController extends Controller
     public function cerrarcarrito(){
         $items = Carrito::where('user_id',Auth::user()->id)
         ->where('estado',0)->get();
-  
+
         $ultimoCarrito = Carrito::max('numerocarrito'); 
 
         foreach ($items as $item) {
@@ -144,7 +144,7 @@ class CarritoController extends Controller
           $item->estado = 1;
           $item->save();
         }
-  
+
         return redirect ('/productos');
       }
 
@@ -152,10 +152,10 @@ class CarritoController extends Controller
     public function historial(){
         $carts = Carrito::where('user_id',Auth::user()->id)
         ->where('estado',1)->get()->groupBy('numerocarrito');
-    
+
         return view('historial', compact('carts'));
-    
-    
+
+
       }
-    
+
 }

@@ -12,7 +12,7 @@
         <ul>
           @forelse ($carts as $cart)
             <div class="recuadro">
-            Compra numero: {{$cart[0]->numerocarrito}}
+            Código de compra: 000{{$cart[0]->numerocarrito}}
             @foreach ($cart as $item)
             <section class="card">
               <li>{{$item->nombre}}, {{$item->precio}}</li>
