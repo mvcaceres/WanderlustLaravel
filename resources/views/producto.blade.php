@@ -26,7 +26,7 @@
           <button type="submit">Agregar al carrito</button>
         </form>
 
-        @if(Auth::user()->isadmin ==1 )
+        @if(Auth::user() && Auth::user()->isadmin==1)
         <div class="botones">
         <form class="" action="/editarproducto/{{$producto->id}}" method="get">
             {{-- <input type="hidden" name="id" value="{{$producto->id}}"> --}}
