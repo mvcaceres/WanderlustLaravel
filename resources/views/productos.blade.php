@@ -9,6 +9,17 @@
 
 <h1>NUESTROS <span>PRODUCTOS</span></h1>
 
+@if(Auth::user()->isadmin==1)
+<div class="botonesAdmin">
+<form class="" action="/agregarproducto" method="get">
+    {{-- <input type="hidden" name="id" value=""> --}}
+  <input type="submit" name="" value="Agregar Nuevo Producto">
+  @csrf
+
+</form>
+</div>
+@endif
+
 <div class="barra-opciones">
 
     <a href="/categoria/1">Maletas</a>

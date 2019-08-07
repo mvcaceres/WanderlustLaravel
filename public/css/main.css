@@ -822,10 +822,16 @@ a.buttonTransparente {
   padding: 0px 10px;
   border: 2px solid  white;
   background-color: #1C6A89;
+  text-decoration: none;
 }
+h3.logo-newsletter{
+  display: flex;
+  justify-content: center;
 
+}
 .logo-newsletter img{
   width: 90%;
+  text-align: center;
   margin-bottom: 20px;
 
 }

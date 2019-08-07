@@ -5,7 +5,7 @@ window.onload = function(){
     })
     .then(function(respuesta){
         //console.log(respuesta.data);
-        var select = document.querySelector('select#provincia');
+        var select = document.querySelector('select.provincia');
 
         for(var i = 0; i < respuesta.data.length; i++){
             //console.log(respuesta.data[i].curso);

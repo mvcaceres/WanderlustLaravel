@@ -1,63 +1,72 @@
 @extends('layouts.plantilla')
 
+@section('css')
+
+<link rel="stylesheet" href={{ URL::asset('css/editarproducto.css') }}>
+@endsection
+
 @section('sectionContenido')
 
+<h1><span>AGREGAR </span>NUEVO PRODUCTO</h1>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Agregar Producto') }}</div>
-
-                <div class="card-body">
+              <div class="card-body">
                     <form method="POST" action="/agregarproducto" enctype="multipart/form-data">
                         @csrf
                         {{-- {{csrf_field()}} --}}
                         <!-- categoria_id -->
-                        <div class="form-group row">
-                            <label for="categoria_id">{{ __('categoria_id') }}</label>
+                        <div class="lineasDatos">
+                            <label for="categoria_id">Categoría_id:</label>
+                            <div class="nuevo">
+                            <select  type="text" name="categoria_id" value="{{ old('categoria_id') }}" required autocomplete="categoria_id" autofocus>
 
-                            <div class="col-md-6">
-                                <input  type="text" name="categoria_id" value="{{ old('categoria_id') }}" required autocomplete="categoria_id" autofocus>
+                              @foreach ($categorias as $categoria)
+
+                              <option>
+                                  {{$categoria->id}}
+                              </option>
+                              @endforeach
+
+                            </select>
                             </div>
                         </div>
                         <!-- fin categoria_id -->
 
                         <!-- nombre -->
-                        <div class="form-group row">
-                            <label for="nombre">{{ __('nombre') }}</label>
-
-                            <div class="col-md-6">
-                                <input  type="text" name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus>
+                        <div class="lineasDatos">
+                            <label for="nombre">Nombre:</label>
+                            <div class="nuevo">
+                            <input  type="text" name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus>
                             </div>
                         </div>
                         <!-- fin nombre -->
 
                         <!-- descripcion -->
-                        <div class="form-group row">
-                            <label for="descripcion">{{ __('descripcion') }}</label>
+                        <div class="lineasDatos">
+                            <label for="descripcion">Descripción:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input  type="text" name="descripcion" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus>
                             </div>
                         </div>
                         <!-- fin descripcion -->
 
                         <!-- precio -->
-                        <div class="form-group row">
-                            <label for="precio">{{ __('precio') }}</label>
+                        <div class="lineasDatos">
+                            <label for="precio">Precio:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input  type="text" name="precio" value="{{ old('precio') }}" required autocomplete="precio" autofocus>
                             </div>
                         </div>
                         <!-- fin precio -->
 
                         <!-- imagen -->
-                        <div class="form-group row">
-                            <label for="imagen">{{ __('imagen') }}</label>
+                        <div class="lineasDatos">
+                            <label for="imagen">Imagen:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen" value="{{ old('imagen') }}" required autocomplete="imagen" autofocus>
 
                                 <!-- @error('imagen')
@@ -70,30 +79,30 @@
                         <!-- fin imagen -->
 
                         <!-- stock -->
-                        <div class="form-group row">
-                            <label for="stock">{{ __('stock') }}</label>
+                        <div class="lineasDatos">
+                            <label for="stock">Stock:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input  type="text" name="stock" value="{{ old('stock') }}" required autocomplete="stock" autofocus>
                             </div>
                         </div>
                         <!-- fin stock -->
 
                         <!-- tamano -->
-                        <div class="form-group row">
-                            <label for="precio">{{ __('tamano') }}</label>
+                        <div class="lineasDatos">
+                            <label for="precio">Tamano:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input  type="text" name="tamano" value="{{ old('tamano') }}" required autocomplete="tamano" autofocus>
                             </div>
                         </div>
                         <!-- fin tamano -->
 
                         <!-- color -->
-                        <div class="form-group row">
-                            <label for="color">{{ __('color') }}</label>
+                        <div class="lineasDatos">
+                            <label for="color">Color:</label>
 
-                            <div class="col-md-6">
+                            <div class="nuevo">
                                 <input  type="text" name="color" value="{{ old('color') }}" required autocomplete="color" autofocus>
                             </div>
                         </div>

@@ -29,6 +29,11 @@ h1 span{
   display: flex;
   justify-content: center;
 }
+
+div.botonesAdmin{
+  text-align: center;
+  margin-bottom: 10px;
+}
 .barra-opciones a{
   color: #189D98;
   font-size: 15px;

@@ -1,23 +1,30 @@
 @extends('layouts.plantilla')
 
-@section('sectionContenido')
+@section('css')
+<link rel="stylesheet" href={{ URL::asset('css/historialcarrito.css') }}>
+@endsection
 
-<h1>Mis carritos</h1>
-    <section>
+
+@section('sectionContenido')
+<main id="carritos">
+<h1>Mis <span>carritos</span></h1>
 
         <ul>
           @forelse ($carts as $cart)
-            Numero de carrito: {{$cart[0]->numerocarrito}}
+            <div class="recuadro">
+            Compra numero: {{$cart[0]->numerocarrito}}
             @foreach ($cart as $item)
+            <section class="card">
               <li>{{$item->nombre}}, {{$item->precio}}</li>
             @endforeach
+              </section>
+              </div>
           @empty
-            <p>No tiene historial de carritos</p>
+            <p class="vacio">No tiene historial de carritos</p>
           @endforelse
         </ul>
 
 
 
-    </section>
-
+</main>
 @endsection

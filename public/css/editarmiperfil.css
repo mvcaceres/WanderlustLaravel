@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+  }
+
+  html {
+      font-family: sans-serif;
+  }
+
+  body{
+    margin:0;
+    padding:0;
+  }
+
+  h1 span{
+    color: #189D98;
+  }
+  h1{
+      color:lightgray;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 25px;
+  }
+
+  div.container{
+    display: flex;
+    justify-content: center;
+  }
+
+  div.card{
+      width: 100%;
+      padding:20px;
+      display: flex;
+      flex: wrap;
+      justify-content: space-between;
+      max-width: 390px;
+  }
+
+  div.card-body{
+    width: 100%;
+  }
+
+  div.lineasDatos{
+    width: 100%;
+    background: rgba(218, 223, 225, 0.5);
+    padding-bottom:5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.lineasDatos label{
+    margin-top: 0px;
+    display: inline-block;
+    padding: 5px 5px;
+    background: rgba(189, 195, 199, 0.5);
+    width: 100px;
+  }
+
+  div.nuevo{
+
+    display: flex;
+      justify-content: center;
+    align-items: center;
+    width:75%;
+  }
+  div.nuevo input{
+    width: 80%;
+  }
+
+  div.nuevo#divNuevoImg input{
+    width: 100%;
+  }
+
+  div.nuevo select.provincia{
+    width: 80%;
+  }
+  div.contenedorImgOriginalYNueva{
+    height: 170px;
+    width:75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  div#divNuevoImg{
+    margin-top: 0px;
+
+  }
+
+
+
+  .contenedorImagenEditar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: double;
+    border-width: 3px;
+    border-color: #189D98;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .original img{
+    max-width: 100px;
+  }
+
+  div.divfinalCambiosPerfil{
+    width: 100%;
+    text-align: center;
+  }
+  div.divfinalCambiosPerfil button{
+    width: 45%;
+    height: 50px;
+    color: white;
+    margin-top: 10px;
+    background-color: #189D98;
+  }

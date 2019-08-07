@@ -68,6 +68,12 @@ class ProductoController extends Controller
           $path = $request->file('imagen')->store('/public/producto');
           $file = basename($path);
 
+          // $nombreCategoria=$request["categoria_id"];
+
+            // $encontrarCategoría = Categoria::all()->where('nombre',$nombreCategoria);
+            // $obtenerId=$encontrarCategoría[2];
+            // dd($encontrarCategoría);
+
           $nuevoProducto->categoria_id = $request["categoria_id"];
           $nuevoProducto->nombre = $request["nombre"];
           $nuevoProducto->descripcion = $request["descripcion"];

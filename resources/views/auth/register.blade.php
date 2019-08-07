@@ -103,7 +103,7 @@
                             <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
 
                             <div class="col-md-6">
-                                <select id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus></select>
+                                <select class="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus></select>
 
                                 @error('provincia')
                                     <span class="invalid-feedback" role="alert">
