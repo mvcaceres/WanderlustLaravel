@@ -8,7 +8,7 @@ class categoria extends Model
 {
   public $guarded = [];
 
-  public function producto(){
+  public function productos(){
     return $this->hasMany('App\Producto', 'producto_id');
   }
 }

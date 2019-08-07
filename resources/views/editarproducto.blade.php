@@ -22,11 +22,15 @@
                               <div class="lineasDatos">
                                   <label for="categoria_id">Categoría:</label>
                                   <div class="nuevo">
-                                  <select  type="text" name="categoria_id" value="{{$producto->categoria_id}}" required autocomplete="categoria_id" autofocus>
+                                  <select  type="text" name="categoria_id" required autocomplete="categoria_id" autofocus>
                                     @foreach ($categorias as $categoria)
+                                    <option value="{{$categoria->id}}"
+                                      @if(old('categoria_id', $producto->categoria_id)== $categoria->id)
+                                       selected
+                                      @endif
+                                    >
 
-                                    <option>
-                                        {{$categoria->id}}
+                                        {{$categoria->nombre}}
                                     </option>
                                     @endforeach
                                   </select>
@@ -101,7 +105,7 @@
                                     </div>
                                   </div>
                                   <div id=divNuevoImg class="nuevo">
-                                  <input type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen" value="{{ old('imagen') }}" required autocomplete="imagen" autofocus>
+                                  <input type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen" autocomplete="imagen" autofocus>
                                   </div>
                                       <!-- @error('imagen')
                                           <span class="invalid-feedback" role="alert">

@@ -69,10 +69,16 @@ article.form{
     justify-content: space-between;
 }
 
+article.form .containerImg{
+  max-height: 270px;
+  overflow: hidden;
+  margin: auto;
+}
 article.form img{
-    height: 270px;
+    height: auto;
     margin: 15px;
     margin:auto;
+    max-width: 216px;
 }
 
 p{

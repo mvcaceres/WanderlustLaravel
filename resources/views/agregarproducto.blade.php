@@ -17,14 +17,18 @@
                         {{-- {{csrf_field()}} --}}
                         <!-- categoria_id -->
                         <div class="lineasDatos">
-                            <label for="categoria_id">Categoría_id:</label>
+                            <label for="categoria_id">Categoría:</label>
                             <div class="nuevo">
-                            <select  type="text" name="categoria_id" value="{{ old('categoria_id') }}" required autocomplete="categoria_id" autofocus>
+                            <select  type="text" name="categoria_id"  required autocomplete="categoria_id" autofocus>
 
                               @foreach ($categorias as $categoria)
+                              <option value="{{$categoria->id}}"
+                                @if(old('categoria_id')== $categoria->id)
+                                 selected
+                                @endif
+                              >
 
-                              <option>
-                                  {{$categoria->id}}
+                                  {{$categoria->nombre}}
                               </option>
                               @endforeach
 

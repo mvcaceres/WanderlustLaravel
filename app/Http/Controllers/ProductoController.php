@@ -7,7 +7,11 @@ use App\Categoria;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
-use isadmin;
+use IsAdmin;
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
 
 class ProductoController extends Controller
 {
@@ -18,11 +22,15 @@ class ProductoController extends Controller
      */
     public function index($categoria = null)
     {
+
       if($categoria){
-        $productos = Producto::all()->where('categoria_id', $categoria);
+        // con where filtramos y con paginate es como un get y a la vez paginador
+        $productos = Producto::where('categoria_id', $categoria)->paginate(3);
         return view('productos', compact('productos'));
+
       } else {
-      $productos = Producto::all();
+      // en vez de all ponemos paginate y no solo me trae todo, (pero en tandas) sino que a la vez me pagina todo en una
+      $productos = Producto::paginate(3);
       return view('productos', compact('productos'));
       }
     }
@@ -85,7 +93,7 @@ class ProductoController extends Controller
 
           $nuevoProducto->save();
 
-          return redirect('home');
+          return redirect('productos');
     }
 
     /**
@@ -111,7 +119,8 @@ class ProductoController extends Controller
     public function edit($id)
     {
       $producto = Producto::find($id);
-      return view('editarproducto', compact('producto'));
+      $categorias = Categoria::all();
+      return view('editarproducto', compact('producto','categorias'));
     }
 
     /**
@@ -147,21 +156,25 @@ class ProductoController extends Controller
 
           $producto = Producto::find($id);
 
-          $path = $request->file('imagen')->store('imagenes');
-          $file = basename($path);
+          if($request['imagen']){
+            $path = $request->file('imagen')->store('/public/producto');
+            $file = basename($path);
+            $producto->imagen = $file;
+          }
+
 
           $producto->categoria_id = $request["categoria_id"];
           $producto->nombre = $request["nombre"];
           $producto->descripcion = $request["descripcion"];
           $producto->precio = $request["precio"];
-          $producto->imagen = $file;
+
           $producto->stock = $request["stock"];
           $producto->tamano = $request["tamano"];
           $producto->color = $request["color"];
 
           $producto->save();
 
-          return redirect('/producto');
+          return redirect('/productos');
 
       }
 

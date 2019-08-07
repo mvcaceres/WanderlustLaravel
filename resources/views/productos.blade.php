@@ -5,11 +5,12 @@
 @endsection
 
 @section('sectionContenido')
+
 <main id="productos">
 
 <h1>NUESTROS <span>PRODUCTOS</span></h1>
 
-@if(Auth::user()->isadmin==1)
+@if(Auth::user()->isadmin ==1 )
 <div class="botonesAdmin">
 <form class="" action="/agregarproducto" method="get">
     {{-- <input type="hidden" name="id" value=""> --}}
@@ -38,13 +39,20 @@
         <p class="cate">Categoría: <a href="/categoria/{{$producto->categoria_id}}">{{$producto->categoria_id}} </a></p>
         <p class="nom"> {{$producto->nombre}}</p>
         {{-- <p><a href="#">Comprar</a></p> --}}
-        <img src="/storage/producto/{{$producto->imagen}}" alt="">
+        <div class="containerImg">
+          <img src="/storage/producto/{{$producto->imagen}}" alt="">
+        </div>
+
         <p class="prec">Precio $ {{$producto->precio}}</p>
         <p class="mas"><a href="/producto/{{$producto->id}}">Ver más</a></p>
 
       </article>
       @endforeach
+
     </section>
+
+      {{$productos->links()}}
+
 
   </main>
 

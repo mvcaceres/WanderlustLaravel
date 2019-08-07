@@ -52,8 +52,13 @@ class UserController extends Controller
 
           $usuario = Auth::user();
 
-          $path = $request->file('foto')->store('/public/userFoto');
-          $file = basename($path);
+          if($request['foto']){
+            $path = $request->file('foto')->store('/public/userFoto');
+            $file = basename($path);
+            $usuario->foto = $file;
+          }
+
+
 
           $usuario->name = $request["name"];
           $usuario->apellido = $request["apellido"];
@@ -63,7 +68,7 @@ class UserController extends Controller
           $usuario->provincia = $request["provincia"];
           $usuario->codigoPostal = $request["codigoPostal"];
           $usuario->email = $request["email"];
-          $usuario->foto = $file;
+
           $usuario->save();
 
           return redirect('/miperfil');
