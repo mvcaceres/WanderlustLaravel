@@ -24,8 +24,8 @@
         <p><span>Apellido:</span> {{$usuario->apellido}}</p>
         <p><span>Teléfono:</span> {{$usuario->telefono}}</p>
         <p><span>Dirección:</span> {{$usuario->direccion}}</p>
-        <p><span>Ciudad:</span> {{$usuario->ciudad}}</p>
         <p><span>Provincia:</span> {{$usuario->provincia}}</p>
+        <p><span>Ciudad:</span> {{$usuario->ciudad}}</p>
         <p><span>Código Postal:</span> {{$usuario->codigoPostal}}</p>
         <p><span>Email:</span> {{$usuario->email}}</p>
 
